@@ -22,7 +22,7 @@ $(document).ready(function() {
       tooltip: {
          formatter: function() {
             return ''+
-               this.x +' Headshots: '+ this.y +' People';
+               this.x +' Headshots: '+ this.y +'%';
          }
       },
       plotOptions: {
