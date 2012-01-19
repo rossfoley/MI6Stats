@@ -27,14 +27,11 @@ namespace :deploy do
   desc "Symlink extra configs and folders."
   task :symlink_extras do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    # run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
   end
 
   desc "Setup shared directory."
   task :setup_shared do
-    # run "mkdir #{shared_path}/assets"
     run "mkdir #{shared_path}/config"
-    # run "mkdir #{shared_path}/db"
     puts "Now edit the config files and fill assets folder in #{shared_path}."
   end
 
