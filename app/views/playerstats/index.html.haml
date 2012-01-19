@@ -1,5 +1,10 @@
 - title "MI6 Player Stats"
 
+%h1 Graph of Headshots on MI6 Battlefield 3 Server
+#placeholder{:style => "width:600px;height:300px"}
+
+%hr
+
 %table
   %thead
     %tr
@@ -11,3 +16,5 @@
       %th Playtime
   %tbody
     = render @players
+
+#headshots{:data => {:graph => @player_graph}}
