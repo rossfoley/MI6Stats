@@ -1,0 +1,6 @@
+- Use tbl_mapstats to find which maps cause people to leave
+- Set up double query to find dog tags
+- Show tbl_server_stats on home page
+- Include killstreak and deathstreak
+- Show current server status using tbl_server
+- Remember that _hs means headshots
