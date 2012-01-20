@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $(".tablesorter").tablesorter();
   var chart = new Highcharts.Chart({
       chart: {
          renderTo: 'graph_container',

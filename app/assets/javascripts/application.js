@@ -6,5 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.flot.min
+//= require highcharts
+//= require jquery.tablesorter.min
 //= require_tree .
