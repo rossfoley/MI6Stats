@@ -7,15 +7,25 @@ class PlayerstatsController < ApplicationController
   def index
     @players = Playerstats.find_by_sql(QUERY)
 
-    total_players = @players.count
     headshot_data = Playerstats.count(:group => "FLOOR(Headshots/10)")
-    categories = headshot_data.map { |k, v| "'#{k*10}-#{k*10+9}'" }.join(", ")
-    values = headshot_data.map { |k, v| "#{number_with_precision((v*100.0)/total_players, :precision => 2)}" }.join(", ")
-    @graph_categories = "[#{categories}]"
-    @graph_data = "[#{values}]"
+    @pie_data = "[#{generate_pie_data(headshot_data)}]"
   end
 
   def table
     @players = Playerstats.find_by_sql(QUERY)
+  end
+
+  private
+
+  def generate_pie_data(data)
+    data.map { |k, v| "['#{k*10}-#{k*10+9}', #{v}]" }.join(", ")
+  end
+
+  def generate_categories(data)
+    data.map { |k, v| "'#{k*10}-#{k*10+9}'" }.join(", ")
+  end
+
+  def generate_values(data, total_players)
+    data.map { |k, v| "#{number_with_precision((v*100.0)/total_players, :precision => 2)}" }.join(", ")
   end
 end
