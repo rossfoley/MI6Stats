@@ -1,0 +1,11 @@
+- title "MI6 Player Stats"
+%table.tablesorter
+  %thead
+    %tr
+      %th Soldier
+      %th Score
+  %tbody
+    - @players.each do |playerstats|
+      %tr
+        %td= playerstats.SoldierName
+        %td= playerstats.Score

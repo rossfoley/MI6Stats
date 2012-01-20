@@ -14,4 +14,8 @@ class PlayerstatsController < ApplicationController
     @graph_categories = "[#{categories}]"
     @graph_data = "[#{values}]"
   end
+
+  def table
+    @players = Playerstats.find_by_sql(QUERY)
+  end
 end
