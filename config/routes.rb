@@ -1,5 +1,8 @@
 Mi6stats::Application.routes.draw do
-  match "playerstats/index" => "playerstats#index"
-  match "playerstats/table" => "playerstats#table"
+  get "playerstats/index"
+  get "playerstats/table"
+
+  get "mapstats/index"
+
   root :to => "playerstats#index"
 end
