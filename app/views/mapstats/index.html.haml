@@ -1,2 +1,22 @@
-<h1>Mapstats#index</h1>
-<p>Find me in app/views/mapstats/index.html.erb</p>
+- title "MI6 Map Stats"
+= javascript_include_tag "mapstats"
+
+#graph_average.map_graph{data: {categories: @map_avg[:categories], players: @map_avg[:data]}}
+#graph_left.map_graph{data: {categories: @map_left[:categories], players: @map_left[:data]}}
+#graph_joined.map_graph{data: {categories: @map_joined[:categories], players: @map_joined[:data]}}
+
+%hr/
+
+%table.tablesorter
+  %thead
+    %tr
+      %th Game
+      %th Map Name
+      %th Game Mode
+      %th Average Players
+      %th Minimum Players
+      %th Maximum Players
+      %th Players Joined
+      %th Players Left
+  %tbody
+    = render @mapstats

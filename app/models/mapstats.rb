@@ -28,10 +28,10 @@ class Mapstats < ActiveRecord::Base
   end
 
   def readable_map_name
-    MAPS[MapName]
+    MAPS[self.MapName] || "None"
   end
 
   def readable_game_mode
-    MODES[Gamemode]
+    MODES[self.Gamemode] || "None"
   end
 end
