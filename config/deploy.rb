@@ -1,5 +1,4 @@
 require 'bundler/capistrano'
-load 'deploy/assets'
 set :application, "mi6.rossfoley.com"
 role :app, application
 role :web, application
@@ -44,16 +43,9 @@ namespace :deploy do
       exit
     end
   end
-
-  desc "Compile assets for Rails 3.1"
-  task :compile_assets do
-    run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
-  end
 end
 
 before "deploy", "deploy:check_revision"
 after "deploy", "deploy:cleanup" # keeps only last 5 releases
 after "deploy:setup", "deploy:setup_shared"
 after "deploy:update_code", "deploy:symlink_extras"
-
-after "deploy:update_code", "deploy:compile_assets"
