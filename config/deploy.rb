@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+load 'deploy/assets'
 set :application, "mi6.rossfoley.com"
 role :app, application
 role :web, application
