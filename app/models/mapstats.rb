@@ -1,5 +1,5 @@
 class Mapstats < ActiveRecord::Base
-  set_table_name "tbl_mapstats"
+  self.table_name = "tbl_mapstats"
 
   MAPS = {"MP_001" => "Grand Bazaar",
           "MP_003" => "Tehran Highway",

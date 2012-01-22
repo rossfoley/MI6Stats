@@ -1,9 +1,7 @@
 - title "MI6 Map Stats"
 = javascript_include_tag "mapstats"
 
-#graph_average.map_graph{data: {categories: @map_avg[:categories], players: @map_avg[:data]}}
-#graph_left.map_graph{data: {categories: @map_left[:categories], players: @map_left[:data]}}
-#graph_joined.map_graph{data: {categories: @map_joined[:categories], players: @map_joined[:data]}}
+#graph_map{data: {categories: @categories, total: @total, left: @left, joined: @joined}}
 
 %hr/
 
