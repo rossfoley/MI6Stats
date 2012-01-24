@@ -8,4 +8,13 @@
       = h(yield(:title) || "MI6 Stats")
     = csrf_meta_tag
     %body
+      %nav
+        %ul
+          %li= link_to "Home", root_path
+          %li= link_to "Player Stats", playerstats_path
+          %li= link_to "Player Stats Table (iFrame Version)", playerstats_table_path
+          %li= link_to "Map Stats", mapstats_path
+          %li= link_to "Dog Tags - All", dogtags_path
+          %li= link_to "Dog Tags - Top Players", dogtags_top_players_path
+
       = yield

@@ -1,0 +1,11 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    =stylesheet_link_tag "application"
+    =javascript_include_tag "application"
+    %title 
+      = h(yield(:title) || "MI6 Stats")
+    = csrf_meta_tag
+    %body
+      = yield

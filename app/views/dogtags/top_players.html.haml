@@ -1,0 +1,13 @@
+- title "MI6 Dog Tags"
+= javascript_include_tag "dogtags"
+
+%table.tablesorter
+  %thead
+    %tr
+      %th Soldier
+      %th Dog Tags Taken
+  %tbody
+    - @dogtags.each do |killer, count|
+      %tr
+        %td= killer
+        %td= count
