@@ -10,11 +10,12 @@
     %tr
       %th Soldier Name
       %th Score
+      %th Score/Min
       %th Kills
-      %th Deaths
-      %th Headshots
-      %th Killstreak
-      %th Deathstreak
-      %th Playtime
+      %th KDR
+      %th Headshot %
+      %th Rounds Played
   %tbody
     = render @players
+
+= paginate @players

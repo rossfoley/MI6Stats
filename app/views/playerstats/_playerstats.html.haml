@@ -1,9 +1,8 @@
 %tr
   %td= playerstats.SoldierName
   %td= playerstats.Score
+  %td= playerstats.spm
   %td= playerstats.Kills
-  %td= playerstats.Deaths
-  %td= playerstats.Headshots
-  %td= playerstats.Killstreak
-  %td= playerstats.Deathstreak
-  %td= playerstats.Playtime
+  %td= number_with_precision playerstats.kdr, precision: 2
+  %td= playerstats.headshot_percent
+  %td= playerstats.Rounds

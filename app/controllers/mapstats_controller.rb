@@ -1,6 +1,6 @@
 class MapstatsController < ApplicationController
   def index
-    @mapstats = Mapstats.order("TimeRoundStarted DESC").all
+    @mapstats = Mapstats.order("TimeRoundStarted DESC").page(params[:page])
     @categories = create_graph_categories
     @total = create_graph_array "AvgPlayers"
     @left = create_graph_array "PlayersLeftServer"

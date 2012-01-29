@@ -8,7 +8,6 @@
 %table.tablesorter
   %thead
     %tr
-      %th Game
       %th Map Name
       %th Game Mode
       %th Average Players
@@ -18,3 +17,5 @@
       %th Players Left
   %tbody
     = render @mapstats
+
+= paginate @mapstats

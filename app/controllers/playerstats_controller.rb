@@ -1,18 +1,11 @@
 class PlayerstatsController < ApplicationController
   def index
-    @players = Playerstats.all_with_names.order("Playtime DESC")
-    @pie_data = "[#{generate_pie_data}]"
+    @players = Playerstats.all_with_names.order("Score DESC").page(params[:page])
+    @pie_data = Playerstats.create_pie_graph_data
   end
 
   def table
-    @players = Playerstats.all_with_names.order("Score DESC")
+    @players = Playerstats.all_with_names.order("Score DESC").limit(100)
     render layout: "blank"
-  end
-
-  private
-
-  def generate_pie_data
-    data = Playerstats.count(group: "FLOOR(Headshots/10)")
-    data.map { |k, v| "['#{k*10}-#{k*10+9}', #{v}]" }.join(", ")
   end
 end

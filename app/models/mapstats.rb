@@ -24,7 +24,7 @@ class Mapstats < ActiveRecord::Base
            "SquadDeathMatch0" => "Squad Deathmatch"}
 
   def full_map_title
-    readable_map_name + " - " + readable_game_mode
+    "#{readable_map_name} - #{readable_game_mode}"
   end
 
   def readable_map_name
