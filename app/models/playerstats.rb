@@ -12,7 +12,7 @@ class Playerstats < ActiveRecord::Base
   end
 
   def headshot_percent
-    self.Headshots / self.Kills
+    (10.0 * self.Headshots) / self.Kills
   end
 
   def self.create_pie_graph_data

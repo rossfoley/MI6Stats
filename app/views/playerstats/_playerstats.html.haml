@@ -4,5 +4,5 @@
   %td= playerstats.spm
   %td= playerstats.Kills
   %td= number_with_precision playerstats.kdr, precision: 2
-  %td= playerstats.headshot_percent
+  %td= number_with_precision(playerstats.headshot_percent, precision: 2) + "%"
   %td= playerstats.Rounds
