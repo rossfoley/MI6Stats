@@ -1,90 +1,63 @@
 $(document).ready(function() {
   $(".tablesorter").tablesorter();
-  createPieChart();
+  createBarGraph();
 });
 
-function getPieData() {
-  return ( new Function( "return " + $("#graph_container").attr("data-pie") ) )();
-}
+function createBarGraph() {
+  var colors, chart, data, new_data;
 
-function createPieChart() {
-  var chart = new Highcharts.Chart({
-      chart: {
-         renderTo: 'graph_container',
-         plotBackgroundColor: null,
-         plotBorderWidth: null,
-         plotShadow: false
-      },
-      title: {
-         text: 'MI6 Server: Number of Headshots'
-      },
-      tooltip: {
-         formatter: function() {
-            return '<b>'+ this.point.name +'</b>: '+ this.y +' Soldiers, '+ Math.round(this.percentage) +' %';
-         }
-      },
-      plotOptions: {
-         pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-               enabled: false
+  colors = Highcharts.getOptions().colors;
+  data = getGraphData();
+  new_data = []
+
+  $.each(data, function(index, value) {
+    new_data.push({
+      y: value,
+      color: colors[index]
+    });
+  });
+
+  $.each(getGraphCategories(), function(index, value) {
+    var query = "." + value.replace(/\+/g, "");
+    $(query).css("color", colors[index]);
+  });
+
+  chart = new Highcharts.Chart({
+      chart: { renderTo: 'graph_container', defaultSeriesType: 'column' },
+      title: { text: 'Headshot Count' },
+      subtitle: { text: 'Number of Players in Each Range' },
+      xAxis: { categories: getGraphCategories() },
+      yAxis: { min: 0, title: { text: 'Number of Players' } },
+      tooltip: { formatter: function() { return '' + this.x + ' Headshots: ' + this.y + ' Players'; } },
+      plotOptions: { 
+        column: { 
+          pointPadding: 0.2,
+          borderWidth: 0,
+          dataLabels: {
+            enabled: true,
+            style: {
+               fontWeight: 'bold'
             },
-            showInLegend: true
-         }
+            formatter: function() {
+              var end_string = ' Players';
+              if (this.y === 1) { end_string = ' Player'; }
+              return this.y + end_string;
+            }
+          }
+        }
       },
-     series: [{
-       type: 'pie',
-       name: 'Headshot Statistics',
-       data: getPieData()
-     }]
+      series: [{ name: 'Number of Headshots',  data: new_data }]
+  });
+
+  $.each(chart.series[0].data, function(index, point) {
+    point.dataLabel.css({color: colors[index]});
   });
 }
 
-function getGraphData() {
-  return ( new Function( "return " + $("#graph_container").attr("data-graph") ) )();
-}
-
 function getGraphCategories() {
-  return ( new Function( "return " + $("#graph_container").attr("data-categories") ) )();
+  return ( new Function( "return " + $("#graph_container").data("categories") ) )();
 }
 
-function createLineChart() {
-  var chart = new Highcharts.Chart({
-      chart: {
-         renderTo: 'graph_container',
-         defaultSeriesType: 'column'
-      },
-      title: {
-         text: 'Headshot Statistics'
-      },
-      subtitle: {
-         text: 'MI6 Battlefield 3 Server'
-      },
-      xAxis: {
-         categories: getGraphCategories()
-      },
-      yAxis: {
-         min: 0,
-         title: {
-            text: 'Frequency'
-         }
-      },
-      tooltip: {
-         formatter: function() {
-            return ''+
-               this.x +' Headshots: '+ this.y +'%';
-         }
-      },
-      plotOptions: {
-         column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-         }
-      },
-     series: [{
-         name: 'Headshots',
-         data: getGraphData()
-      }]
-   });
+function getGraphData() {
+  return $("#graph_container").data("counts");
 }

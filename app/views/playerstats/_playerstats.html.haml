@@ -1,5 +1,7 @@
 %tr
-  %td= playerstats.SoldierName
+  %td
+    %span{class: playerstats.headshot_range.gsub(/\+/, "")}
+      = playerstats.SoldierName
   %td= playerstats.Score
   %td= playerstats.spm
   %td= playerstats.Kills
