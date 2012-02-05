@@ -17,16 +17,25 @@ section#main {
   background: white;
 }
 
-header h1 {
+h1 {
   font-size: 30px;
   color: #0A51A1;
+}
+
+#server_stats tr td:first-child {
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+#server_stats {
+  font-size: 16px;
 }
 
 /* Navigation */
 
 nav#main_nav {
   text-align: left;
-  margin-top: 5px;
+  margin-top: -34px;
   margin-bottom: 10px;
   z-index: 1;
   background: #292929;

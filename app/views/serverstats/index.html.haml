@@ -1,0 +1,24 @@
+- title "MI6 Server Statistics"
+
+%h1 Server Statistics for the MI6 Battlefield 3 Server
+
+%table#server_stats
+  %tbody
+    %tr
+      %td Total Players
+      %td= @server.CountPlayers
+    %tr
+      %td Total Kills
+      %td= @server.SumKills
+    %tr
+      %td Total Headshots
+      %td= @server.SumHeadshots
+    %tr
+      %td Average Kills
+      %td= @server.AvgKills
+    %tr
+      %td Average Score
+      %td= @server.AvgScore
+    %tr
+      %td Average Playtime
+      %td= number_with_precision((@server.AvgPlaytime/60), precision: 2) + " minutes"

@@ -7,5 +7,7 @@ Mi6stats::Application.routes.draw do
 
   get "mapstats/index", as: :mapstats
 
-  root :to => "playerstats#index"
+  get "serverstats/index", as: :serverstats
+
+  root :to => "serverstats#index"
 end
