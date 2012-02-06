@@ -1,0 +1,2 @@
+module AssaultrifleHelper
+end

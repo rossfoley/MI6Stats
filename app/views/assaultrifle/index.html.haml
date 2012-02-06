@@ -1,0 +1,13 @@
+- title "MI6 Assault Rifle Statistics"
+
+- AssaultRifle::WEAPONS.each do |weapon|
+  .weapon.clearfix{id: weapon}
+    .weapon_image
+      .weapon_image_wrap
+        = image_tag("weapons/assault/#{weapon}.jpg")
+    .weapon_info
+      %h3= weapon
+      %ul
+        %li= "Total Kills: #{@assault["#{weapon}_kills"]}"
+        %li= "Total Headshots: #{@assault["#{weapon}_hs"]}"
+        %li= "Total Deaths: #{@assault["#{weapon}_deaths"]}"

@@ -1,0 +1,36 @@
+.weapon {
+  width: 465px;
+  height: 150px;
+  float: left;
+  padding: 10px;
+  border: 1px solid #333;
+  box-shadow: 5px 5px 5px #aaa;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.weapon .weapon_image {
+  width: 220px;
+  height: 150px;
+  float: left;
+  margin-right: 5px;
+}
+
+.weapon .weapon_image_wrap {
+  display: table-cell;
+  width: 220px;
+  height: 150px;
+  vertical-align: middle;
+}
+
+.weapon .weapon_image img {
+  width: 220px;
+  vertical-align: middle;
+}
+
+.weapon .weapon_info {
+  display: block;
+  float: left;
+  width: 220px;
+}

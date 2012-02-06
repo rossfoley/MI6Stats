@@ -8,9 +8,8 @@
       = h(yield(:title) || "MI6 Stats")
     = csrf_meta_tag
     %body
-      %section#main
+      %section#main.clearfix
         %header
-          -# %h1 MI6 Battlefield 3 Server Statistics
           = image_tag "bannertop.png"
         %nav#main_nav.clearfix
           %ul#nav
@@ -21,6 +20,10 @@
                 %li= link_to "Full Table", playerstats_path
                 %li= link_to "iFrame Version", playerstats_table_path
             %li= link_to "Map Stats", mapstats_path
+            %li
+              = link_to "Weapon Stats", "#"
+              %ul
+                %li= link_to "Assault Rifles", assaultrifle_path
             %li
               = link_to "Dog Tags", dogtags_path
               %ul
