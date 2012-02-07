@@ -1,4 +1,6 @@
 Mi6stats::Application.routes.draw do
+  get "sniper/index", as: :sniper
+
   get "assaultrifle/index", as: :assaultrifle
 
   get "dogtags/index", as: :dogtags

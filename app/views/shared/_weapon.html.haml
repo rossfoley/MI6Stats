@@ -1,0 +1,11 @@
+- weapon_class::WEAPONS.each do |weapon|
+  .weapon.clearfix{id: weapon}
+    .weapon_image
+      .weapon_image_wrap
+        = image_tag("weapons/#{folder}/#{weapon}.jpg")
+    .weapon_info
+      %h3= weapon
+      %ul
+        %li= "Total Kills: #{weapon_data["#{weapon}_kills"]}"
+        %li= "Total Headshots: #{weapon_data["#{weapon}_hs"]}"
+        %li= "Total Deaths: #{weapon_data["#{weapon}_deaths"]}"

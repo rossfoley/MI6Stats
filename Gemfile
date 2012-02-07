@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem "rails", "3.2.0"
 gem "mysql2"
 gem "haml"
+gem "haml-rails"
 gem "kaminari"
 
 group :test, :development do
