@@ -1,0 +1,2 @@
+module MeleeHelper
+end

@@ -1,0 +1,26 @@
+%nav#main_nav.clearfix
+  %ul#nav
+    %li= link_to "Home", root_path
+    %li
+      = link_to "Player Stats", playerstats_path
+      %ul
+        %li= link_to "Full Table", playerstats_path
+        %li= link_to "iFrame Version", playerstats_table_path
+    %li= link_to "Map Stats", mapstats_path
+    %li
+      = link_to "Weapon Stats", "#"
+      %ul
+        %li= link_to "Assault Rifles", assaultrifle_path
+        %li= link_to "SMG", smg_path
+        %li= link_to "LMG", lmg_path
+        %li= link_to "Sniper Rifles", sniper_path
+        %li= link_to "Shotguns", shotgun_path
+        %li= link_to "Handguns", handgun_path
+        %li= link_to "Explosives", explosives_path
+        %li= link_to "Projectile Explosives", projectile_path
+        %li= link_to "Melee", melee_path
+    %li
+      = link_to "Dog Tags", dogtags_path
+      %ul
+        %li= link_to "All Players", dogtags_path
+        %li= link_to "Top Players", dogtags_top_players_path

@@ -1,6 +1,12 @@
 Mi6stats::Application.routes.draw do
+  get "smg/index", as: :smg
+  get "shotgun/index", as: :shotgun
+  get "projectile/index", as: :projectile
+  get "melee/index", as: :melee
+  get "lmg/index", as: :lmg
+  get "handgun/index", as: :handgun
+  get "explosives/index", as: :explosives
   get "sniper/index", as: :sniper
-
   get "assaultrifle/index", as: :assaultrifle
 
   get "dogtags/index", as: :dogtags

@@ -60,7 +60,8 @@ h1 {
 }
 
 .weapon .weapon_image img {
-  width: 220px;
+  max-width: 220px;
+  max-height: 150px;
   vertical-align: middle;
 }
 

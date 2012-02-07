@@ -1,0 +1,2 @@
+module SmgHelper
+end

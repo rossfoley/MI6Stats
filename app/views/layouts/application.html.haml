@@ -2,8 +2,9 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}
-    =stylesheet_link_tag "application"
-    =javascript_include_tag "application"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = favicon_link_tag "favicon.png"
     %title 
       = h(yield(:title) || "MI6 Stats")
     = csrf_meta_tag
@@ -11,23 +12,5 @@
       %section#main.clearfix
         %header
           = image_tag "bannertop.png"
-        %nav#main_nav.clearfix
-          %ul#nav
-            %li= link_to "Home", root_path
-            %li
-              = link_to "Player Stats", playerstats_path
-              %ul
-                %li= link_to "Full Table", playerstats_path
-                %li= link_to "iFrame Version", playerstats_table_path
-            %li= link_to "Map Stats", mapstats_path
-            %li
-              = link_to "Weapon Stats", "#"
-              %ul
-                %li= link_to "Assault Rifles", assaultrifle_path
-                %li= link_to "Sniper Rifles", sniper_path
-            %li
-              = link_to "Dog Tags", dogtags_path
-              %ul
-                %li= link_to "All Players", dogtags_path
-                %li= link_to "Top Players", dogtags_top_players_path
+        = render partial: "shared/menu"
         = yield
