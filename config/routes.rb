@@ -16,6 +16,7 @@ Mi6stats::Application.routes.draw do
   get "playerstats/table", as: :playerstats_table
 
   get "mapstats/index", as: :mapstats
+  get "mapstats/table", as: :mapstats_table
 
   get "serverstats/index", as: :serverstats
 
