@@ -2,6 +2,10 @@
   %td
     %span{class: playerstats.headshot_range.gsub(/\+/, "")}
       = playerstats.SoldierName
+  %td
+    = image_tag "flags/#{playerstats.CountryCode.upcase}.gif", class: "country_flag"
+    .country_code
+      = playerstats.CountryCode.upcase
   %td= playerstats.Score
   %td= playerstats.spm
   %td= playerstats.Kills

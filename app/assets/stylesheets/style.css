@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: #888;
+  background: url('/assets/steelbackground.jpg') repeat;
   margin: 0;
   font-size: 14px;
   font-family: sans-serif;
@@ -29,6 +29,14 @@ h1 {
 
 #server_stats {
   font-size: 16px;
+}
+
+.country_code {
+  display: inline;
+}
+
+.country_flag {
+  display: inline;
 }
 
 /* Weapons Pages */

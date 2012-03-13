@@ -1,9 +1,14 @@
 class Playerstats < ActiveRecord::Base
   self.table_name = "tbl_playerstats"
 
-  scope :all_with_names, select("`tbl_playerstats`.*, `tbl_playerdata`.SoldierName, CASE WHEN Headshots >= 0 AND Headshots <= 10 THEN '0-10' WHEN Headshots >= 11 AND Headshots <= 50 THEN '11-50' WHEN Headshots >= 51 AND Headshots <= 100 THEN '51-100' WHEN Headshots >= 101 AND Headshots <= 200 THEN '100-200' ELSE '200+' END as headshot_range").joins("INNER JOIN tbl_server_player USING(StatsID) INNER JOIN tbl_playerdata USING(PlayerID)")
+  HEADSHOT_GROUPS = "CASE WHEN Headshots >= 0 AND Headshots <= 10 THEN '0-10' WHEN Headshots >= 11 AND Headshots <= 50 THEN '11-50' WHEN Headshots >= 51 AND Headshots <= 100 THEN '51-100' WHEN Headshots >= 101 AND Headshots <= 200 THEN '100-200' ELSE '200+' END"
 
-  HEADSHOT_QUERY = "SELECT h.headshot_range, COUNT(h.headshot_range) AS headshot_count FROM (SELECT CASE WHEN Headshots >= 0 AND Headshots <= 10 THEN '0-10' WHEN Headshots >= 11 AND Headshots <= 50 THEN '11-50' WHEN Headshots >= 51 AND Headshots <= 100 THEN '51-100' WHEN Headshots >= 101 AND Headshots <= 200 THEN '100-200' ELSE '200+' END as headshot_range FROM tbl_playerstats) as h GROUP BY h.headshot_range"
+  scope :all_with_names, 
+    select("`tbl_playerstats`.*, `tbl_playerdata`.SoldierName, `tbl_playerdata`.CountryCode, #{HEADSHOT_GROUPS} as headshot_range")
+    .joins("INNER JOIN tbl_server_player USING(StatsID) INNER JOIN tbl_playerdata USING(PlayerID)")
+
+  HEADSHOT_QUERY = "SELECT h.headshot_range, COUNT(h.headshot_range) AS headshot_count FROM (SELECT #{HEADSHOT_GROUPS} as headshot_range FROM tbl_playerstats) as h GROUP BY h.headshot_range"
+
 
   def spm
     self.Score / (self.Playtime / 60)

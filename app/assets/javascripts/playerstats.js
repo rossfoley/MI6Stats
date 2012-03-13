@@ -17,10 +17,12 @@ function createBarGraph() {
     });
   });
 
-  $.each(getGraphCategories(), function(index, value) {
-    var query = "." + value.replace(/\+/g, "");
-    $(query).css("color", colors[index]);
-  });
+  if ($("tbody.headshots").length != 0) {
+    $.each(getGraphCategories(), function(index, value) {
+      var query = "." + value.replace(/\+/g, "");
+      $(query).css("color", colors[index]);
+    });
+  }
 
   chart = new Highcharts.Chart({
       chart: { renderTo: 'graph_container', defaultSeriesType: 'column' },

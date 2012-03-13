@@ -6,12 +6,12 @@ table.tablesorter {
   text-align: left;
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-  background-color: #e6EEEE;
-  border: 1px solid #FFF;
+  background: -webkit-gradient(linear, 0% 19%, 0% 75%, from(#590a0a), to(#350707));
+  color: #eee;
   padding: 4px;
+  font-weight: normal;
 }
 table.tablesorter thead tr .header {
-  background-image: url(bg.gif);
   background-repeat: no-repeat;
   background-position: center right;
   cursor: pointer;
@@ -44,5 +44,5 @@ table.tablesorter thead tr .no_arrow.headerSortDown {
   background-image: none;
 }
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
-  background-color: #8dbdd8;
+  background: -webkit-gradient(linear, 0% 19%, 0% 75%, from(#8F1010), to(#5E0C0C)); 
 }

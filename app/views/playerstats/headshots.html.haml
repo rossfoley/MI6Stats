@@ -1,5 +1,9 @@
-- title "MI6 Player Stats"
+- title "MI6 Headshot Stats"
 = javascript_include_tag "playerstats"
+
+#graph_container{data: {categories: @graph_data[:categories], counts: @graph_data[:data]}}
+
+%hr/
 
 %table.tablesorter
   %thead
@@ -12,7 +16,7 @@
       %th KDR
       %th Headshot %
       %th Rounds Played
-  %tbody
+  %tbody.headshots
     = render @players
 
 = paginate @players

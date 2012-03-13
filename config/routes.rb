@@ -13,6 +13,7 @@ Mi6stats::Application.routes.draw do
   get "dogtags/top_players", as: :dogtags_top_players
 
   get "playerstats/index", as: :playerstats
+  get "playerstats/headshots", as: :headshot_table
   get "playerstats/table", as: :playerstats_table
 
   get "mapstats/index", as: :mapstats
