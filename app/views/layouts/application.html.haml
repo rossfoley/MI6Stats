@@ -2,6 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}
+    = stylesheet_link_tag "bootstrap"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = favicon_link_tag "favicon.png"
@@ -9,7 +10,7 @@
       = h(yield(:title) || "MI6 Stats")
     = csrf_meta_tag
     %body
-      %section#main.clearfix
+      %section#main.clearfix.container
         %header
           = image_tag "bannertop.png"
         = render partial: "shared/menu"

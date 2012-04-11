@@ -1,34 +1,11 @@
-html {
-  font-size: 100%;
-}
-
 body {
   background: url('/assets/steelbackground.jpg') repeat;
-  margin: 0;
-  font-size: 14px;
-  font-family: sans-serif;
-  line-height: 1.231;
 }
 
-section#main {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
+#main {
   background: white;
-}
-
-h1 {
-  font-size: 30px;
-  color: #0A51A1;
-}
-
-#server_stats tr td:first-child {
-  font-weight: bold;
-  padding-right: 10px;
-}
-
-#server_stats {
-  font-size: 16px;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .country_code {
@@ -39,140 +16,13 @@ h1 {
   display: inline;
 }
 
-/* Weapons Pages */
-
-.weapon {
-  width: 465px;
-  height: 150px;
-  float: left;
-  padding: 10px;
-  border: 1px solid #333;
-  box-shadow: 5px 5px 5px #aaa;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.weapon .weapon_image {
-  width: 220px;
-  height: 150px;
-  float: left;
-  margin-right: 5px;
-}
-
-.weapon .weapon_image_wrap {
-  display: table-cell;
-  width: 220px;
-  height: 150px;
-  vertical-align: middle;
-}
-
 .weapon .weapon_image img {
   max-width: 220px;
-  max-height: 150px;
-  vertical-align: middle;
+  max-height: 70px;
 }
 
-.weapon .weapon_info {
-  display: block;
-  float: left;
-  width: 220px;
-}
-
-/* Navigation */
-
-nav#main_nav {
-  text-align: left;
-  margin-top: -34px;
-  margin-bottom: 10px;
-  z-index: 1;
-  background: #292929;
-  background: -moz-linear-gradient(top, black, #3c3c3c 1px, #292929 25px);
-  background: -webkit-gradient(linear, left top, left 25, from(black), color-stop(4%, #3c3c3c), to(#292929));
-  border: 1px #777 solid;
-}
-
-#nav {
-  background: #e5e5e5;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-#nav li a, #nav li {
-  float: left;
-}
-
-#nav li {
-  list-style: none;
-  position: relative;
-  margin-left: 0;
-  z-index: 1;
-}
-
-#nav li a {
-  padding: 5px 8px;
-  text-decoration: none;
-  color: white;
-  background: #292929;
-  background: -moz-linear-gradient(top, black, #3c3c3c 1px, #292929 25px);
-  background: -webkit-gradient(linear, left top, left 25, from(black), color-stop(4%, #3c3c3c), to(#292929));
-  border-right: 1px solid #3c3c3c;
-  border-left: 1px solid #292929;
-  border-bottom: 1px solid #232323;
-  border-top: 1px solid #545454;
-}
-
-#nav li a:hover {
-  background: #2580a2;
-  background: -moz-linear-gradient(top, #2580a2, #075d7a);
-  background: -webkit-gradient(linear, left top, left bottom, from(#2580a2), to(#075d7a));
-  color: white;
-  text-decoration: none;
-}
-
-
-/* Submenu */
-
-.hasChildren {
-  position: absolute;
-  width: 5px; height: 5px;
-  background: black;
-  right : 0;
-  bottom: 0;
-}
-
-#nav li ul {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  padding: 0; 
-  margin: 0;
-}
-
-#nav li:hover > ul {
-  display: block;
-}
-
-#nav li ul li, #nav li ul li a {
-  float: none;
-}
-
-#nav li ul li a {
-  width: 180px;
-  display: block;
-}
-
-/* SUBSUB Menu */
-
-#nav li ul li ul {
-  display: none;
-}
-
-#nav li ul li:hover ul {
-  left: 100%;
-  top: 0;
+.weapon {
+  height: 140px;
 }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
