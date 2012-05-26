@@ -1,11 +1,12 @@
 body {
-  background: url('/assets/steelbackground.jpg') repeat;
+  background: url('/assets/background.png') repeat;
 }
 
 #main {
   background: white;
   overflow: hidden;
   padding: 10px;
+  border: 1px solid black;
 }
 
 .country_code {

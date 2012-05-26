@@ -7,5 +7,5 @@
     %title 
       = h(yield(:title) || "MI6 Stats")
     = csrf_meta_tag
-    %body
+    %body{style: "background: none;"}
       = yield
